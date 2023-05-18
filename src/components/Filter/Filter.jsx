@@ -1,7 +1,15 @@
+import { useDispatch } from 'react-redux';
 import css from './Filter.module.css';
-import PropTypes from 'prop-types';
+import { filterContacts } from 'redux/filterSlice';
 
-export const Filter = ({ handleFilter }) => {
+export const Filter = () => {
+  const dispatch = useDispatch();
+
+  const handleFilter = e => {
+    const filter = e.currentTarget.value;
+    dispatch(filterContacts(filter));
+  };
+
   return (
     <>
       <label className={css.contactLabel}>
@@ -17,8 +25,4 @@ export const Filter = ({ handleFilter }) => {
       </label>
     </>
   );
-};
-
-Filter.propTypes = {
-  handleFilter: PropTypes.func.isRequired,
 };

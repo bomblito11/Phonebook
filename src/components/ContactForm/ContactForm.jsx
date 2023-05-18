@@ -1,6 +1,30 @@
+import { useDispatch, useSelector } from 'react-redux';
 import css from './ContactForm.module.css';
-import PropTypes from 'prop-types';
-export const ContactForm = ({ handleSubmit }) => {
+// import PropTypes from 'prop-types';
+import { addContact } from 'redux/operation';
+import { selectContacts } from 'redux/selectors';
+
+export const ContactForm = () => {
+  const dispatch = useDispatch();
+  const contacts = useSelector(selectContacts);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const name = form.elements.name.value;
+    const number = form.elements.number.value;
+    if (
+      contacts.find(
+        contact => contact.name.toLowerCase() === name.toLowerCase()
+      )
+    ) {
+      alert(`${name} is already in contacts.`);
+    } else {
+      dispatch(addContact({ name, number }));
+      form.reset();
+    }
+  };
+
   return (
     <div className={css.formContainer}>
       <form onSubmit={handleSubmit} className={css.contactForm}>
@@ -34,8 +58,8 @@ export const ContactForm = ({ handleSubmit }) => {
   );
 };
 
-ContactForm.propTypes = {
-  handleSubmit: PropTypes.func.isRequired,
-};
+// ContactForm.propTypes = {
+//   handleSubmit: PropTypes.func.isRequired,
+// };
 
 export default ContactForm;

@@ -1,7 +1,17 @@
+import { useDispatch, useSelector } from 'react-redux';
 import css from './ContactList.module.css';
-import PropTypes from 'prop-types';
+import { selectContacts, selectFilter } from 'redux/selectors';
+import { deleteContact } from 'redux/operation';
 
-export const ContactList = ({ contacts, filter, handleDelete }) => {
+export const ContactList = () => {
+  const dispatch = useDispatch();
+  const contacts = useSelector(selectContacts);
+  const filter = useSelector(selectFilter);
+
+  const handleDelete = id => {
+    dispatch(deleteContact(id));
+  };
+
   return (
     <div className={css.contactsContainer}>
       <ul className={css.contactList}>
@@ -25,8 +35,4 @@ export const ContactList = ({ contacts, filter, handleDelete }) => {
       </ul>
     </div>
   );
-};
-
-ContactList.propTypes = {
-  handleDelete: PropTypes.func.isRequired,
 };
