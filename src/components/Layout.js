@@ -4,7 +4,11 @@ import { Suspense } from 'react';
 
 export const Layout = ({ children }) => {
   return (
-    <div style={{ margin: '0 auto', padding: '20px 16px' }}>
+    <div
+      style={{
+        margin: '0 auto',
+      }}
+    >
       <AppBar />
       <Suspense fallback={null}>
         <Outlet />

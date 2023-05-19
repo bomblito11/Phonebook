@@ -15,7 +15,7 @@ export const Filter = () => {
       <label className={css.contactLabel}>
         Find contacts by name
         <input
-          style={{ width: 150 }}
+          style={{ width: 250, fontFamily: 'sans-serif', padding: '4px' }}
           onChange={handleFilter}
           name="filter"
           type="text"

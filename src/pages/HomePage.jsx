@@ -1,3 +1,5 @@
+import { Home } from 'components/HomePage/HomePage';
+
 export const HomePage = () => {
-  return <div>This is homepage!</div>;
+  return <Home />;
 };

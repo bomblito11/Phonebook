@@ -1,9 +1,48 @@
+.registerFormContainer {
+  background-color: rgb(231, 231, 231);
+  border-radius: 6px;
+  font-family: 'Quicksand', sans-serif;
+  box-shadow: 0px 8px 12px -1px rgba(66, 68, 90, 1);
+  width: 450px;
+  text-align: center;
+}
+
+.registerHeader {
+  font-size: 26px;
+  margin-top: 10px;
+}
+
+.registerInfo {
+  color: rgb(75, 75, 75);
+  font-size: 15px;
+}
+
 .form {
   width: 320px;
+  padding: 20px;
+  margin: auto;
 }
 
 .label {
   display: flex;
   flex-direction: column;
   margin-bottom: 16px;
+  text-align: left;
+}
+
+.input {
+  border-radius: 5px;
+  font-family: sans-serif;
+  padding: 5px;
+}
+
+.registerButton {
+  background-color: white;
+  padding: 3px 15px;
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.logInContainer {
+  padding: 20px;
 }

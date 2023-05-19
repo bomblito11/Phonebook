@@ -3,5 +3,9 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
-  border-bottom: 1px solid #2a363b;
+  border-bottom: 1px solid #cfcfcf;
+  background-color: #ebebeb;
+  padding: 4px 100px;
+  font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
 }
