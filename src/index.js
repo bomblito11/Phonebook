@@ -10,7 +10,7 @@ import { ChakraProvider } from '@chakra-ui/react';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/goit-react-hw-08-phonebook">
+    <BrowserRouter basename="/Phonebook">
       <PersistGate loading={null} persistor={persistor}>
         <Provider store={store}>
           <ChakraProvider>
